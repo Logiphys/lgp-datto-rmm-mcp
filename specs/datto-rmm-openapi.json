@@ -7,7 +7,7 @@
       "name": "©Datto, Inc. - All rights reserved. ",
       "url": "http://www.datto.com/"
     },
-    "version": "2.0.0 (Build 1.22.1-576_667cfe9f)"
+    "version": "2.0.0 (Build 1.24.0-591_051ee924)"
   },
   "servers": [
     {
@@ -4037,6 +4037,19 @@
           }
         }
       },
+      "OperationRateStatus": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
       "RateStatusResponse": {
         "type": "object",
         "properties": {
@@ -4058,6 +4071,20 @@
           "accountCutOffRatio": {
             "type": "number",
             "format": "float"
+          },
+          "accountWriteRateLimit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "accountWriteCount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "operationWriteStatus": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/OperationRateStatus"
+            }
           }
         }
       },

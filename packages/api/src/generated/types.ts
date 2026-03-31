@@ -1144,6 +1144,12 @@ export interface components {
             /** Format: date-time */
             started?: string;
         };
+        OperationRateStatus: {
+            /** Format: int32 */
+            limit?: number;
+            /** Format: int32 */
+            count?: number;
+        };
         RateStatusResponse: {
             /** Format: int64 */
             slidingTimeWindowSizeSeconds?: number;
@@ -1154,6 +1160,13 @@ export interface components {
             accountRateLimit?: number;
             /** Format: float */
             accountCutOffRatio?: number;
+            /** Format: int32 */
+            accountWriteRateLimit?: number;
+            /** Format: int64 */
+            accountWriteCount?: number;
+            operationWriteStatus?: {
+                [key: string]: components["schemas"]["OperationRateStatus"];
+            };
         };
         /** @description Pagination configuration */
         PaginationConfiguration: {
