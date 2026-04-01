@@ -1,11 +1,16 @@
 # Dependencies
 node_modules/
 
-# Build outputs
-dist/
+# Build outputs (sub-packages)
+apps/*/dist/
+packages/*/dist/
+crates/*/target/
 build/
 .next/
 out/
+
+# Root dist/ is committed (standalone npx bundle)
+# Do NOT add dist/ here — it is the pre-built MCP server
 
 # Turbo
 .turbo/
@@ -22,7 +27,7 @@ coverage/
 .idea/
 *.swp
 *.swo
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/extensions.json
 
@@ -46,6 +51,7 @@ Cargo.lock
 # These are copies of files from .ai-docs/ for cross-platform compatibility
 .claude/agents/*.md
 .claude/commands/*.md
+
 # Keep tracked config files
 !.claude/CLAUDE.md
 !.claude/README.md
