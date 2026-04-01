@@ -87,7 +87,7 @@ export class OAuthTokenManager {
         'Content-Type': 'application/x-www-form-urlencoded',
         Authorization: `Basic ${credentials}`,
       },
-      body: 'grant_type=client_credentials',
+      body: `grant_type=password&username=${this.credentials.apiKey}&password=${this.credentials.apiSecret}`,
     });
 
     if (!response.ok) {
